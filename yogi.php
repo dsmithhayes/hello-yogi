@@ -3,17 +3,18 @@
  * @package Hello_Yogi
  * @version 1.0
  */
+
 /*
 Plugin Name: Hello, Yogi
-Plugin URI: http://davesmithhayes.com
-Description: A fork of the ever so popular Hello Dolly plugin for WordPress, but with Yogi Berra quotes.
-Author: Dave Smith-Hayes, Matt Mullenweg
+Plugin URI: http://github.com/dsmithhayes/hello-yogi
+Description: A fork of the ever so popular Hello Dolly plugin by Matt Mullenweg that comes with every standard WordPress installation, but with Yogi Berra quotes.
+Author: Dave Smith-Hayes
 Version: 1.0
 Author URI: http://davesmithhayes.com/
 */
 
 function yogi_berra_quotes() {
-  $lyrics = "When you come to a fork in the road, take it.
+  $quotes = "When you come to a fork in the road, take it.
 You can observe a lot by just watching.
 It ain’t over till it’s over.
 It’s like déjà vu all over again.
@@ -65,10 +66,10 @@ If the world were perfect, it wouldn’t be.
 A lot of guys go, ‘Hey, Yog, say a Yogi-ism.’ I tell ’em, ‘I don’t know any.’ They want me to make one up. I don’t make ’em up. I don’t even know when I say it. They’re the truth. And it is the truth. I don’t know.";
 
   // Here we split it into lines
-  $lyrics = explode("\n",$lyrics);
+  $quotes = explode("\n",$quotes);
 
   // And then randomly choose a line
-  return "\"" . wptexturize($lyrics[mt_rand(0, count($lyrics) - 1)]) . "\"";
+  return "\"" . wptexturize($quotes[mt_rand(0, count($quotes) - 1)]) . "\"";
 }
 
 // This just echoes the chosen line, we'll position it later
